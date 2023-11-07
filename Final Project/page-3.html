@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ember Studios</title>
+<style>
+    /* Reset some default browser styles */
+body, h1, p, ul, li {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    font-family: Arial, Helvetica, sans-serif, sans-serif; /* add new font */
+    background-color: #faf7ef;
+}
+body {
+    padding: 0 10px;  /* 0 padding top-bottom, 10px padding left-right */
+    background-color: #faf7ef;
+}
+
+/* Header styles */
+#logo {
+    width: 450px;
+    height: auto;
+    margin-top: 50px;
+    margin-right: auto;
+    margin-left: 50px
+}
+header {
+    display: flex;
+    align-items: left;
+    justify-content: right;
+    flex-wrap: wrap;
+    background-color: #faf7ef;
+}
+
+header h1 {
+    order: 2; /* Makes sure the title appears after the logo when they're in a row */
+    background-color: #faf7ef;
+}
+header {
+    background-color: #faf7ef;
+    padding: 20px 0;
+    text-align: right;
+    
+
+}
+
+header h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    background-color: #faf7ef;
+}
+
+header nav ul {
+    list-style-type: none;
+    display: inline-flex;
+    gap: 20px;
+    background-color: #faf7ef;
+    margin-top: 50px
+}
+
+header nav li a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.2s;
+    background-color: #faf7ef;
+    font-size: 20px;
+    margin-right:40px
+}
+
+header nav li a:hover {
+    color: #555;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* other styles for your navbar */
+}
+
+.cta-button {
+  margin-left: auto;
+  padding: 0;
+  /* You can add more styling to make it look like a button */
+}
+
+.cta-button img {
+  display: block; /* Removes default inline image spacing */
+  width: 125px; /* Adjust as needed */
+  height: auto; /* Adjust as needed */
+  margin-top: -18px;
+  margin-right:30px
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 40px;
+    background-color: #faf7ef;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 40px;
+    background-color: #faf7ef;
+}
+
+.container {
+  display: flex; /* Enables Flexbox */
+  justify-content: space-between; /* Distributes space between the flex items */
+  align-items: center; /* Aligns items vertically in the center */
+  width: 100%; /* Ensures the container spans the full width of its parent */
+  padding: 20px; /* Adds some padding inside the container */
+  margin-top: 80px;
+
+}
+
+.headline-container {
+  flex-grow: 1; /* Allows the container to grow and take up free space */
+  margin-right: 20px; /* Adds a right margin if you want some space between the sections */
+  margin-left: 80px;
+  font-size: 19px
+}
+
+.text-container {
+  flex-grow: 1; /* Allows the container to grow and take up free space */
+  margin-right: 0px; /* Adds a right margin if you want some space between the sections */
+  font-size: 21px;
+  margin-left: 140px
+}
+
+.button-container {
+  /* This does not grow and takes up only as much space as needed for the button */
+  margin-right:80px;
+  padding-left: 0px
+}
+
+button {
+    display: block;
+    margin-left: 100px;
+    margin-bottom: 100px;
+    margin-top: 50px;
+    background-color: #ede692;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border-color: black
+}
+
+button:hover {
+    background-color: #555;
+    color: #FFF
+}
+
+/* Optional: Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Stacks the flex items vertically on smaller screens */
+    align-items: stretch; /* Stretches items to the container's width */
+  }
+  .headline-container, .text-container, .button-container {
+    margin-right: 0; /* Removes the margin when stacked */
+    margin-bottom: 10px; /* Adds space between stacked items */
+  }
+}
+
+
+.video-card-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 50px; /* Adjust the gap as needed */
+  margin: 0 auto;
+  max-width: 1200px; /* Adjust the max width as needed */
+  margin-bottom: 150px
+}
+
+.video-card {
+  flex: 1; /* Ensures that the cards take up equal space */
+  max-width: 1200px; /* Adjust the max-width as needed */
+  border: 1px solid #ccc; /* Optional border */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional shadow for styling */
+  overflow: hidden; /* Ensures the content fits within the card */
+}
+
+.video-card img {
+  width: 100%; /* Ensures the image covers the card */
+  display: block; /* Removes any default margins */
+}
+
+.video-card-content {
+  padding: 30px;
+  background: #faf7ef; /* Adjust the background as needed */
+}
+
+.video-link {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  display: inline-block; /* Allows setting padding and margins */
+  margin-top: 10px;
+  transition: color 0.3s ease; /* For a hover effect */
+}
+
+.video-link:hover {
+  color: #0056b3; /* Change color on hover */
+}
+
+
+/* Footer styles */
+footer {
+    background-color: #f5efd2;
+    color: #000;
+    padding: 20px 0;
+    text-align: left;
+    margin-left: auto;
+}
+
+footer p {
+    margin-bottom: 10px;
+    margin-left: 120px;
+    background-color: #f5efd2;
+}
+
+footer nav ul {
+    list-style-type: none;
+    display: inline-flex;
+    gap: 15px;
+    background-color: #f5efd2 ;
+    margin-left: 120px;
+}
+
+footer nav li a {
+    text-decoration: none;
+    color: #000;
+    transition: color 0.2s;
+    background-color: #f5efd2;
+    max-width: wide;
+}
+
+footer nav li a:hover {
+    color: #ddd;
+}
+
+</style>
+</head>
+<body>
+
+    <!-- Header -->
+    
+    <header>
+        <img src="./assets/images/ember-logo.png" alt="Ember Studios Logo" id="logo">
+        <h1></h1>
+        <nav>
+            <ul>
+                <li><a href="#">PORTFOLIO</a></li>
+                <li><a href="#">SERVICES</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <nav class="navbar">
+                    <!-- other navigation links -->
+                    <a href="your-link.html" class="cta-button" target="_blank">
+                      <img src="./assets/images/cta.png" alt="Connect">
+                    </a>
+                  </nav>
+                  
+            </ul>
+        </nav>
+    </header>
+
+</head>
+<div class="container">
+    <div class="headline-container">
+      <h1>Bringing you beautiful and <br>engaging content.</h1>
+    </div>
+    <div class="text-container">
+      <p>Let's capture the essence of your <br> business, product, or passion to give <br> your customer a true sense of who you are.</p>
+    </div>
+    <div class="button-container">
+      <button>View Portfolio</button>
+    </div>
+  </div>
+
+<div class="video-card-container">
+  <div class="video-card">
+    <a href="https://youtube.com/shorts/Qm5Hqny0224" target="_blank">
+        <img src="./assets/images/noodle-bowls.png" alt="Video thumbnail">
+    </a>
+    <div class="video-card-content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+      <a href="link_to_video_1" class="video-link">See more videos</a>
+    </div>
+  </div>
+  <div class="video-card">
+    <a href="https://youtube.com/shorts/kxz-x8f5QMk?feature=share" target="_blank">
+        <img src="./assets/images/chopping.png" alt="Video thumbnail">
+    </a>
+    <div class="video-card-content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+      <a href="link_to_video_2" class="video-link">See more videos</a>
+    </div>
+  </div>
+  <div class="video-card">
+    <a href="https://youtube.com/shorts/kxz-x8f5QMk?feature=share" target="_blank">
+        <img src="./assets/images/trestles.png" alt="Video thumbnail">
+        </a>
+    <div class="video-card-content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+      <a href="link_to_video_3" class="video-link">See more videos</a>
+    </div>
+  </div>
+</div>
+  
+</body>
+</html>
+
+    <!-- Footer -->
+    <footer>
+        <p>COPYRIGHT EMBER STUDIOS 2023</p>
+        <nav>
+            <ul>
+                <li><a href="#">PORTFOLIO</a></li>
+                <li><a href="#">SERVICES</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">CONNECT</a></li>
+                <li><a href="#">INSTAGRAM</a></li>
+                <li><a href="#">PINTEREST</a></li>
+                <li><a href="#">TIKTOK</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+</body>
+</html>
