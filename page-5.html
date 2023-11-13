@@ -109,42 +109,61 @@ body {
     font-size: 46px;
 }
 
-.services {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 20px;
-    margin: 60px
+.accordion-container {
+  margin: 0;
+  padding: 0;
+  width: 100%; /* Adjust width as necessary */
+  background-color: #faf7ef;
+}
+.accordion {
+  background-color: #faf7ef;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 90%;
+  border:  1px solid #333;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+  margin-left: 80px;
+  font-size: 24px;
+
 }
 
-.service {
-    background-color: #f9cb66;
-    padding: 30px;
-    position: relative;
-    cursor: pointer;
-
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+  background-color: #faf7ef;
 }
 
-.service h3 {
-    margin: 0;
-    background-color: #f9cb66;
-    font-size: 25px
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 18px;
+  background-color: #faf7ef;
+  display: none;
+  overflow: hidden;
+  margin-left: 80px;
+  font-size: 24px;
+  text-wrap: auto;
+  color:#333;
+  width: 90%;
+  margin-bottom: 50px
+  
+  
 }
 
-.service p {
-    margin: 10px 0;
-    background-color: #f9cb66;
-    font-size: 20px
+.accordion:after {
+  content: '\002B'; /* Unicode character for "plus" sign (+) */
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+  
+  
 }
 
-.dropdown-content {
-    display: none;
-    background-color: #f9cb66;
-    padding: 10px;
-    position: below;
-    width: 100%;
-    z-index: 1;
-    
+.active:after {
+  content: "\2212"; /* Unicode character for "minus" sign (-) */
 }
 
 .video-card-container {
@@ -153,7 +172,8 @@ body {
   gap: 50px; /* Adjust the gap as needed */
   margin: 0 auto;
   max-width: 1200px; /* Adjust the max width as needed */
-  margin-bottom: 150px
+  margin-bottom: 150px;
+  margin-top: 50px
 }
 
 .video-card {
@@ -187,19 +207,29 @@ body {
   color: #0056b3; /* Change color on hover */
 }
 
+  /* Media query for screens that are 500px wide or less */
+  @media (max-width: 500px) {
+    .video-card-container {
+      flex-direction: column;
+    }
+    
+    .video-card {
+      min-width: 100%; /* take full width on small screens */
+    }
+}
 
 /* More styling can be added as needed */
 
 .subscription-section {
     background-color: #0e4628; /* Replace with the exact color of your choice */
-    padding: 20px;
+    padding: 50px;
     text-align: center;
     color: white; /* Or any other color as per your design */
 }
 
 .subscription-section h2 {
-    margin-bottom: 20px; /* Adjust as needed */
-    font-size: 24px; /* Adjust as needed */
+    margin-bottom: 30px; /* Adjust as needed */
+    font-size: 40px; /* Adjust as needed */
 }
 
 .subscription-section form {
@@ -207,24 +237,26 @@ body {
 }
 
 .subscription-section input[type="email"] {
-    padding: 10px;
+    padding: 20px;
     margin-right: 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: 0px;
 }
 
 .subscription-section button {
-    padding: 10px 20px;
+    padding: 20px;
     border: none;
-    border-radius: 5px;
-    background-color: white; /* Adjust if you have a specific color in mind */
-    color: #006837; /* Match the button text color to the section background */
+    border-radius: 0px;
+    background-color: #F1CD6F; /* Adjust if you have a specific color in mind */
+    color: #000; /* Match the button text color to the section background */
     cursor: pointer;
+    font-size: 20px;
 }
 
 /* Placeholder text styling */
 .subscription-section input::placeholder {
     color: #aaa; /* Placeholder text color */
+    font-size: 15px;
 }
 
 /* Footer styles */
@@ -291,36 +323,54 @@ footer nav li a:hover {
         <h2>See how we’re helping brands <br> crush their digital relevance.</h2>
     </section>
     
-    <section class="services">
 
-        </div>
-        <div class="service" onclick="toggleDropdown('branding')">
-            <h3>Social Media</h3>
-            <p>3-Day Short/Sweet Intensive </p>
-            <div id="branding" class="dropdown-content">
-                <p> <bold>Includes:</bold> <br> Mood Board  <br> Logotype  <br> Icon/Monogram  <br> Font System  <br> Color Palette  <br> Mockups  <br> Style Guide</p>
-            </div>
-        </div>
-        <div class="service" onclick="toggleDropdown('branding')">
-            <h3>Website Design</h3>
-            <p>3-Day Short/Sweet Intensive </p>
-            <div id="branding" class="dropdown-content">
-                <p>Includes: <br> Mood Board  <br> Logotype  <br> Icon/Monogram  <br> Font System  <br> Color Palette  <br> Mockups  <br> Style Guide</p>
-            </div>
-        </div>
-        <div class="service" onclick="toggleDropdown('branding')">
-            <h3>Graphic Design</h3>
-            <p>3-Day Short/Sweet Intensive </p>
-            <div id="branding" class="dropdown-content">
-                <p>Includes: <br> Mood Board  <br> Logotype  <br> Icon/Monogram  <br> Font System  <br> Color Palette  <br> Mockups  <br> Style Guide</p>
-            </div>
-        </div>
-        <!-- Repeat for other services -->
-    </section>
+    <div class="accordion-container">
+    <button class="accordion">Branding</button>
+    <div class="panel">
+      <p>We craft distinctive logos that capture your brand's spirit, create comprehensive style guides for unwavering consistency, and define a unique voice and tone that speaks directly to your audience. Our tailored approach ensures your brand stands out with elegance and purpose. Let's shape the future of your brand together.
+
+      </p>
+    </div>
+</div>
     
-    <!-- Add more sections for different parts of the page -->
+    <div class="accordion-container">
+    <button class="accordion">Content Creation</button>
+    <div class="panel">
+      <p>We specialize in crafting compelling content that connects and converts. From insightful blog posts to impactful social media campaigns, our content resonates with your audience, embodies your brand, and achieves your business goals. Partner with us to captivate your market and drive results.</p>
+    </div>
+</div>
+
+    <div class="accordion-container">
+    <button class="accordion">Web Design</button>
+    <div class="panel">
+      <p>we blend aesthetics with functionality to create websites that not only look stunning but also perform flawlessly. Our web design services focus on user-friendly layouts, engaging visuals, and seamless navigation to ensure your visitors enjoy the best experience while reflecting your brand's excellence. Let's build your digital presence with precision and creativity.</p>
+    </div>
+</div>
     
-    <script src="script.js"></script>
+<div class="accordion-container">
+    <button class="accordion">Social Media</button>
+    <div class="panel">
+      <p>harnesses the power of social platforms to elevate your brand's online presence. Our social media management is tailored to create meaningful engagement, build your community, and drive brand loyalty. With targeted content and strategic planning, we turn your social media into a hub of activity that grows your audience and your business.</p>
+    </div>
+</div>
+    
+    <script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
+    }
+    </script>
+    
 
 
 
@@ -330,7 +380,7 @@ footer nav li a:hover {
         <img src="./Assets/images/noodle-bowls.png" alt="Video thumbnail">
     </a>
     <div class="video-card-content">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+      <p>We can help you film beautiful, engaging content directed toward your target audience.</p>
       <a href="link_to_video_1" class="video-link">See more videos</a>
     </div>
   </div>
@@ -339,7 +389,7 @@ footer nav li a:hover {
         <img src="./Assets/images/chopping.png" alt="Video thumbnail">
     </a>
     <div class="video-card-content">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+      <p>Give us your business goals and we will help build and refine your audience. </p>
       <a href="link_to_video_2" class="video-link">See more videos</a>
     </div>
   </div>
@@ -348,17 +398,15 @@ footer nav li a:hover {
         <img src="./Assets/images/trestles.png" alt="Video thumbnail">
         </a>
     <div class="video-card-content">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+      <p>From drone footage to user generated content, we'll help you get there. </p>
       <a href="link_to_video_3" class="video-link">See more videos</a>
     </div>
   </div>
 </div>
   
-</body>
-</html>
 
-</body>
-    </html>
+
+
 
 
     <div class="subscription-section">
@@ -385,3 +433,5 @@ footer nav li a:hover {
             </nav>
         </footer>
     
+    </body>
+    </html>
