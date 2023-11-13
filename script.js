@@ -4,3 +4,5 @@ function toggleDropdown(serviceId) {
     // If dropdown is visible, hide it. Else, show it.
     dropdown.style.display = display === 'block' ? 'none' : 'block';
 }
+
+

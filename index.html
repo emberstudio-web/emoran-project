@@ -136,60 +136,44 @@ main img {
     margin: 20px 0;
 }
 
-.container {
-  font-family: 'Arial', sans-serif;
-  width: 80%;
-  margin: 0 auto;
-  padding: 50px 0;
-  background-color: #faf7ef;
-  max-width: 100%
+* {box-sizing: border-box}
+.mySlides1, .mySlides2 {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+  margin-bottom: 100px
 }
 
-.top-bar {
-  display: flex;
-  width: 100%;
-  background-color: #faf7ef;
-  justify-content: space-between;
-  margin-bottom: 50px;
-}
-
-.top-bar button {
-  background: #faf7ef;
-  border: none;
-  font-size: 25px;
+/* Next & previous buttons */
+.prev, .next {
   cursor: pointer;
-  border-bottom: 2px solid rgb(0, 0, 0);
-}
-
-.content-section h1 {
-  font-size: 48px;
-  margin-bottom: 20px;
-}
-
-.content-section p {
-  font-size: 20px;
-  width: 40%;
-  margin-bottom: 20px;
-  background-color: #faf7ef;
-  float: left;
-}
-
-.content-section img {
-  width: 40%;
-  height: auto;
-  float: right;
-  margin-left: 50px;
-
-}
-
-.content-section button {
-  padding: 10px 20px;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
   font-size: 18px;
-  background-color: ede692;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-left: 10px
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a grey background color */
+.prev:hover, .next:hover {
+  background-color: #f1f1f1;
+  color: black;
 }
 
 /* Footer styles */
@@ -234,7 +218,9 @@ footer nav li a:hover {
     <!-- Header -->
     
     <header>
+      <a href="index.html" class="logo"></a>
         <img src="./Assets/images/ember-logo.png" alt="Ember Studios Logo" id="logo">
+
         <h1></h1>
         <nav>
             <ul>
@@ -243,7 +229,7 @@ footer nav li a:hover {
                 <li><a href="page-2.html">ABOUT</a></li>
                 <nav class="navbar">
                     <!-- other navigation links -->
-                    <a href="your-link.html" class="cta-button" target="_blank">
+                    <a href="page-6.html" class="cta-button" target="_blank">
                       <img src="./Assets/images/cta.png" alt="Connect">
                     </a>
                   </nav>
@@ -257,6 +243,7 @@ footer nav li a:hover {
         <section>
             <p>We're a versatile creative studio situated in Los Angeles, California. Our team of designers excels at crafting brand identities from scratch and guiding established brands toward fresh horizons.</p>
             <button>SERVICES</button>
+            <a href="page-5.html"></a>
         </section>
 
         <!-- Image Section -->
@@ -265,34 +252,46 @@ footer nav li a:hover {
         </section>
     </main>
 
-    <div class="container">
-        <div class="top-bar">
-          <button onclick="changeContent('Branding')">Branding</button>
-          <button onclick="changeContent('Content Creation')">Content Creation</button>
-          <button onclick="changeContent('Social')">Social</button>
-          <button onclick="changeContent('Email Marketing')">Email Marketing</button>
-          <button onclick="changeContent('Art Direction')">Art Direction</button>
-        </div>
-      
-        <div class="content-section">
-          <h1 id="content-title">Content Creation</h1>
-          <p id="content-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            <button>LEARN MORE</button>  
-        </p>
-          <img id="content-image" src="./Assets/images/content-creation.png" alt="Content Creation Image">
-        
-        </div>
+    <p></p>
+    <div class="slideshow-container">
+      <div class="mySlides1">
+        <img src="./Assets/images/logofarm.png" style="width:100%">
       </div>
+    
+      <div class="mySlides1">
+        <img src="./Assets/images/logofarm-12.png" style="width:100%">
+      </div>
+    
+      <div class="mySlides1">
+        <img src="./Assets/images/logofarm-11.png" style="width:100%">
+      </div>
+    
+      <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+    </div>
+    
+    <script>
+      let slideIndex = [1,1];
+      let slideId = ["mySlides1", "mySlides2"]
+      showSlides(1, 0);
+      showSlides(1, 1);
       
-      <script>
-        function changeContent(topic) {
-          document.getElementById('content-title').innerText = topic;
-          document.getElementById('content-text').innerText = 'Lorem ipsum for ' + topic; // You can replace this with different text for each topic.
-          document.getElementById('content-image').src = 'path_to_image_for_' + topic.replace(/\s+/g, '_').toLowerCase() + '.jpg'; // Assumes the image naming convention matches the topic.
+      function plusSlides(n, no) {
+        showSlides(slideIndex[no] += n, no);
+      }
+      
+      function showSlides(n, no) {
+        let i;
+        let x = document.getElementsByClassName(slideId[no]);
+        if (n > x.length) {slideIndex[no] = 1}    
+        if (n < 1) {slideIndex[no] = x.length}
+        for (i = 0; i < x.length; i++) {
+           x[i].style.display = "none";  
         }
+        x[slideIndex[no]-1].style.display = "block";  
+      }
       </script>
-
+  
     <!-- Footer -->
     <footer>
         <nav>
@@ -308,6 +307,11 @@ footer nav li a:hover {
             </ul>
         </nav>
     </footer>
+
+  
+
+    
+    
 
 </body>
 </html>
