@@ -134,6 +134,7 @@ body {
 .service p {
     margin: 10px 0;
     background-color: #f9cb66;
+    font-size: 20px
 }
 
 .dropdown-content {
@@ -145,6 +146,47 @@ body {
     z-index: 1;
     
 }
+
+.video-card-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 50px; /* Adjust the gap as needed */
+  margin: 0 auto;
+  max-width: 1200px; /* Adjust the max width as needed */
+  margin-bottom: 150px
+}
+
+.video-card {
+  flex: 1; /* Ensures that the cards take up equal space */
+  max-width: 1200px; /* Adjust the max-width as needed */
+  border: 1px solid #ccc; /* Optional border */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional shadow for styling */
+  overflow: hidden; /* Ensures the content fits within the card */
+}
+
+.video-card img {
+  width: 100%; /* Ensures the image covers the card */
+  display: block; /* Removes any default margins */
+}
+
+.video-card-content {
+  padding: 30px;
+  background: #faf7ef; /* Adjust the background as needed */
+}
+
+.video-link {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  display: inline-block; /* Allows setting padding and margins */
+  margin-top: 10px;
+  transition: color 0.3s ease; /* For a hover effect */
+}
+
+.video-link:hover {
+  color: #0056b3; /* Change color on hover */
+}
+
 
 /* More styling can be added as needed */
 
@@ -250,26 +292,7 @@ footer nav li a:hover {
     </section>
     
     <section class="services">
-        <div class="service" onclick="toggleDropdown('branding')">
-            <h3>Branding</h3>
-            <p>3-Day Short/Sweet Intensive </p>
-            <div id="branding" class="dropdown-content">
-                <p>Includes: <br> Mood Board  <br> Logotype  <br> Icon/Monogram  <br> Font System  <br> Color Palette  <br> Mockups  <br> Style Guide</p>
-            </div>
-        </div>
-        <div class="service" onclick="toggleDropdown('content-creation')">
-            <h4>Content Creation</h4>
-            <p>3-Day Short/Sweet Intensive </p>
-            <div id="content-creation" class="dropdown-content">
-                <p>Includes: <br> Mood Board  <br> Logotype  <br> Icon/Monogram  <br> Font System  <br> Color Palette  <br> Mockups  <br> Style Guide</p>
-            </div>
-        </div>
-        <div class="service" onclick="toggleDropdown('Social')">
-            <h3>Social Media</h3>
-            <p>3-Day Short/Sweet Intensive </p>
-            <div id="branding" class="dropdown-content">
-                <p>Includes: <br> Mood Board  <br> Logotype  <br> Icon/Monogram  <br> Font System  <br> Color Palette  <br> Mockups  <br> Style Guide</p>
-            </div>
+
         </div>
         <div class="service" onclick="toggleDropdown('branding')">
             <h3>Social Media</h3>
@@ -298,9 +321,45 @@ footer nav li a:hover {
     <!-- Add more sections for different parts of the page -->
     
     <script src="script.js"></script>
+
+
+
+<div class="video-card-container">
+  <div class="video-card">
+    <a href="https://youtube.com/shorts/Qm5Hqny0224" target="_blank">
+        <img src="./Assets/images/noodle-bowls.png" alt="Video thumbnail">
+    </a>
+    <div class="video-card-content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+      <a href="link_to_video_1" class="video-link">See more videos</a>
+    </div>
+  </div>
+  <div class="video-card">
+    <a href="https://youtube.com/shorts/kxz-x8f5QMk?feature=share" target="_blank">
+        <img src="./Assets/images/chopping.png" alt="Video thumbnail">
+    </a>
+    <div class="video-card-content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+      <a href="link_to_video_2" class="video-link">See more videos</a>
+    </div>
+  </div>
+  <div class="video-card">
+    <a href="https://youtube.com/shorts/kxz-x8f5QMk?feature=share" target="_blank">
+        <img src="./Assets/images/trestles.png" alt="Video thumbnail">
+        </a>
+    <div class="video-card-content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+      <a href="link_to_video_3" class="video-link">See more videos</a>
+    </div>
+  </div>
+</div>
   
 </body>
+</html>
+
+</body>
     </html>
+
 
     <div class="subscription-section">
         <h2>Let's make it official</h2>
